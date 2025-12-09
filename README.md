@@ -18,4 +18,8 @@ Cada proyecto se encuentra en su propia carpeta.
 Si quieres comentar, sugerir mejoras o simplemente saludar, puedes abrir un *issue* en este repositorio.  
 ¡Cualquier feedback es bienvenido!
 
+---
+
+###### Tema que yo uso en VS y VSCode: https://marketplace.visualstudio.com/items?itemName=MadsKristensen.GitHubThemes
+
 #### *Juan Sánchez, alumno de GDV en la FDI de la UCM, 2025* 
