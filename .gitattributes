@@ -1,2 +1,29 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# Normalizar finales de línea
+* text=auto eol=lf
+
+# Archivos C# como texto siempre
+*.cs text
+*.csproj text
+*.sln text
+*.config text
+*.json text
+*.xml text
+*.md text
+*.txt text
+
+# Archivos binarios (sin diff)
+*.dll binary
+*.exe binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.bmp binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.rar binary
+*.7z binary
+
+# Visual Studio usa UTF-8 con BOM por defecto
+*.cs working-tree-encoding=UTF-8-BOM
