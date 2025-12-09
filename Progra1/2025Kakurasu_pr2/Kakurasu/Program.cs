@@ -210,9 +210,9 @@ public class Program
             else { col++; }
         }
 
-        else if (tecla == 'x') { tab[fil, col] = 'X'; } // Tachar casilla (tab[x,y] = 2) (tecla X)
-        else if (tecla == 'v') { tab[fil, col] = '·'; } // Marcar casilla (tab[x,y] = 1) (tecla V)
-        else if (tecla == 's') { tab[fil, col] = ' '; } // Limpiar casilla (tab[x,y] = 0) (tecla Space)
+        else if (tecla == 'x') { tab[fil, col] = 'X'; } // Tachar casilla (tecla X)
+        else if (tecla == 'v') { tab[fil, col] = '·'; } // Marcar casilla (tecla V)
+        else if (tecla == 's') { tab[fil, col] = ' '; } // Limpiar casilla (tecla Space)
     }
 
     static int SumaFil(char[,] tab, int fil)
@@ -245,13 +245,6 @@ public class Program
             resultadosFil[i] = SumaFil(tab, i);
             resultadosCol[i] = SumaCol(tab, i);
         }
-        /*// debug tonto
-        Console.SetCursorPosition(0, 10);
-        for (int i = 0; i < resultadosCol.Length; i++)
-        {
-            Console.WriteLine("resCol: " + resultadosCol[i] + "   objetivoCol: " + obCol[i]);
-            Console.WriteLine("resFil: " + resultadosFil[i] + "   objetivoFil: " + obFil[i]);
-        }*/
 
         for (int i = 0; i < obFil.Length; i++)
         {
