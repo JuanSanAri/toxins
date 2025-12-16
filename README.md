@@ -1,6 +1,6 @@
 # Natsukashii
 
-Bienvenido a **Natsukashii**, mi biblioteca personal de proyectos y mini-juegos desarrollados a lo largo del tiempo.  
+Bienvenid@ a **Natsukashii**, mi biblioteca personal de proyectos y mini-juegos desarrollados a lo largo del tiempo.  
 Aquí encontrarás todo mi progreso en programación, desde pequeños ejercicios hasta proyectos más completos.
 
 ---
