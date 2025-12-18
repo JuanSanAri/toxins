@@ -15,8 +15,18 @@ namespace Main
             int num = 0;
             int mon = 0;
 
+            bool final = FinJuego(montones);
+
             Inicializa(montones, jugadores, out turno);
             Render(montones, jugadores, turno, num, mon);
+
+            while (!final)
+            {
+                if (turno = 3)
+                {
+                    JuegaHumano(montones, mon, out pals);
+                }
+            }
         }
 
         static void Inicializa(int[] montones, string[] jugadores, out int turno)
@@ -50,21 +60,31 @@ namespace Main
             }
         }
 
-        static void JuegaHumano(int[] montones, int mon, int pals)
+        static void JuegaHumano(int[] montones, int mon, out int pals)
         {
+            pals = 0;
             Console.Write("Humano, elige montón (-1 para terminar): ");
             mon = int.Parse(Console.ReadLine());
 
             if (mon == -1) return;
-            else if (mon >= 0 && mon < montones.Length)
+            else if (mon >= 0 && mon <= montones.Length)
             {
                 do
                 {
                     Console.Write($"Cuántos palillos quieres del montón {mon}: ");
                     pals = int.Parse(Console.ReadLine());
-                } while (pals < 1 || pals > montones[mon]);
-
+                } while (pals > 1 || pals < montones[mon]);
             }
+        }
+
+        static void JuegaMaquina(int[] montones, int mon, int pals)
+        {
+
+        }
+
+        static bool FinJuego(int[] montones)
+        {
+            return false;
         }
     }
 }
