@@ -42,13 +42,54 @@
             {
                 for (int j = 0; j < N; j++)
                 {
+                    // Color del texto
                     if (fijas[i, j] == true) { Console.ForegroundColor = ConsoleColor.Blue; }
                     else { Console.ForegroundColor = ConsoleColor.Yellow; }
-                    Console.Write(tab[i, j] + " ");
+
+                    // Color del fondo dependiendo de la posición del jugador
+                    if (col == i && fil == j)
+                    {
+                        Console.BackgroundColor = ConsoleColor.Green;
+                        Console.Write(tab[i, j]);
+                        Console.ResetColor();
+                        Console.Write(" ");
+                    }
+                    else { Console.Write(tab[i, j] + " "); }
                 }
                 Console.WriteLine();
             }
             Console.ResetColor();
+        }
+
+        static char LeeInput()
+        {
+            char d = ' ';
+            string tecla = Console.ReadKey(true).Key.ToString();
+
+            switch (tecla)
+            {
+                // Movimiento del cursor 	
+                case "LeftArrow": d = 'l'; break;
+                case "UpArrow": d = 'u'; break;
+                case "RightArrow": d = 'r'; break;
+                case "DownArrow": d = 'd'; break;
+
+                // Pulsación de casilla (click)
+                case "Spacebar": d = 'c'; break;
+                case "D0": d = '0'; break;
+                case "D1": d = '1'; break;
+
+                // Terminar juego
+                case "Escape": case "q": d = 'q'; break;
+
+                default: d = ' '; break;
+            }
+            return d;
+        }
+
+        static void ProcesaInput(char c, char[,] tab, bool[,] fijas, int fil, int col)
+        {
+
         }
     }
 }
