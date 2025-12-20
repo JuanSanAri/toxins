@@ -22,7 +22,7 @@ namespace Main
 
             while (!final)
             {
-                if (turno = 3)
+                if (turno == 3)
                 {
                     JuegaHumano(montones, mon, out pals);
                 }
