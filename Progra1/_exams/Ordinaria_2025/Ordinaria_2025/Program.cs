@@ -1,4 +1,6 @@
-﻿namespace Ordinaria_2025
+﻿using System.Net.Http.Headers;
+
+namespace Ordinaria_2025
 {
     internal class Program
     {
@@ -43,16 +45,7 @@
                 Console.WriteLine();
                 Console.WriteLine();
 
-                for (int i = 0; i < N; i++)
-                {
-                    for (int j = 0; j < N; j++)
-                    {
-                        Console.Write(TabLleno(tab) + " ");
-                    }
-                    Console.WriteLine();
-                }
-
-
+                //SacaFilCol(k, tab, out filk, out colk);
             }
             if (TabLleno(tab))
             {
@@ -166,6 +159,64 @@
                 }
                 return true;
             }
+
+            static void SacaFilCol(int k, char[,] tab, char[] filk, char[] colk)
+            {
+                for (int i = 0; i < N; i++)
+                {
+                    filk[i] = tab[i, k];
+                    for (int j = 0; j < N; j++)
+                    {
+                        colk[j] = tab[i, j];
+                    }
+                }
+
+                //debug
+                for (int i = 0; i < N; i++)
+                {
+                    Console.Write(colk[i] + " ");
+                }
+            }
+
+            bool TresSeguidos(char[] v)
+            {
+                int ceroCount = 0;
+                int unoCount = 0;
+
+                for (int i = 0; i < N; i++)
+                {
+                    if (v[i] == '0') { ceroCount++; }
+                    else if (v[i] == '1') { unoCount++; }
+                    else
+                    {
+                        ceroCount = 0;
+                        unoCount = 0;
+                    }
+                }
+
+                if (ceroCount == 3 || unoCount == 3) { return true; }
+                return false;
+            }
+
+            bool IgCerosUnos(char[] v)
+            {
+                int ceroCount = 0;
+                int unoCount = 0;
+
+                for (int i = 0; i < N; i++)
+                {
+                    if (v[i] == '0') { ceroCount++; }
+                    else if (v[i] == '1') { unoCount++; }
+                }
+                if (ceroCount == unoCount) {  return true; }
+                return false;
+            }
+
+            static void MuestraResultado(char[,] tab)
+            {
+                
+            }
+
             //end
         }
     }
