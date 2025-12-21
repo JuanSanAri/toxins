@@ -19,12 +19,10 @@
             bool[,] fijas = new bool[N, N]; // matriz de posiciones fijas
             int fil, col; // fila y columna de la casilla activa
 
-            bool terminado = false;
-
             Inicializa(tab, fijas, out fil, out col);
             Renderiza(tab, fijas, fil, col);
 
-            while (!terminado)
+            while (!TabLleno(tab))
             {
                 char c = LeeInput();
                 ProcesaInput(c, tab, fijas, ref fil, ref col);
@@ -38,10 +36,28 @@
                 {
                     for (int j = 0; j < N; j++)
                     {
-                        Console.Write(tab[i,j] + " ");
+                        Console.Write(tab[i, j] + " ");
                     }
                     Console.WriteLine();
                 }
+                Console.WriteLine();
+                Console.WriteLine();
+
+                for (int i = 0; i < N; i++)
+                {
+                    for (int j = 0; j < N; j++)
+                    {
+                        Console.Write(TabLleno(tab) + " ");
+                    }
+                    Console.WriteLine();
+                }
+
+
+            }
+            if (TabLleno(tab))
+            {
+                Console.Clear();
+                Console.WriteLine("epa");
             }
 
             static void Inicializa(char[,] tab, bool[,] fijas, out int fil, out int col)
@@ -141,7 +157,14 @@
 
             static bool TabLleno(char[,] tab)
             {
-
+                for (int i = 0; i < N; i++)
+                {
+                    for (int j = 0; j < N; j++)
+                    {
+                        if (tab[i, j] == '.') { return false; }
+                    }
+                }
+                return true;
             }
             //end
         }
