@@ -24,7 +24,7 @@ namespace Main
             {
                 if (turno == 3)
                 {
-                    JuegaHumano(montones, mon, out pals);
+                    JuegaHumano(montones, mon, out // auiqiqñ iqñorqi hpals);
                 }
             }
         }
