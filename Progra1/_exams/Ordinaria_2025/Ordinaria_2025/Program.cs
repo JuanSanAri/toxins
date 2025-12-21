@@ -19,32 +19,46 @@
             bool[,] fijas = new bool[N, N]; // matriz de posiciones fijas
             int fil, col; // fila y columna de la casilla activa
 
+            //Comienzo
+            Console.CursorVisible = false; // pijada
+            bool salir = false; // aux para esc
+
             Inicializa(tab, fijas, out fil, out col);
             Renderiza(tab, fijas, fil, col);
 
-            while (!TabLleno(tab))
+            while (!TabLleno(tab) && !salir)
             {
                 char c = LeeInput();
                 ProcesaInput(c, tab, fijas, ref fil, ref col);
-
                 Renderiza(tab, fijas, fil, col);
+
+                if (c == 'q') { salir = true; }
             }
 
             // Condiciones de finalización
             if (TabLleno(tab) && !MuestraResultado(tab))
             {
-                Console.Clear();
+                Renderiza(tab, fijas, fil, col);
                 Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine();
                 Console.WriteLine("Enhorabuena, lo has conseguido!!");
                 Console.ResetColor();
             }
-            else
+            else if (TabLleno(tab) && MuestraResultado(tab))
             {
                 Renderiza(tab, fijas, fil, col);
                 Console.SetCursorPosition(0, 5);
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Casi casi!!");
+                Console.WriteLine();
                 MuestraResultado(tab);
+                Console.ResetColor();
+            }
+            else // se puede poner 'else if (salir)', pero al no haber más salidas lo dejo así
+            {
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.WriteLine("Has salido con la tecla ESC.");
                 Console.ResetColor();
             }
         }
@@ -138,11 +152,7 @@
                     }
                 }
             }
-
-            // escape
-            if (c == 'q') return;
         }
-
 
         static bool TabLleno(char[,] tab)
         {
