@@ -31,14 +31,16 @@ namespace Main
 
                 Render(montones, jugadores, turno, pals, mon);
 
-                turno = (turno + 1) % jugadores.Length; // magnífica esta línea
+
+                if (FinJuego(montones))
+                {
+                    Console.WriteLine($"Se acabó, {jugadores[turno]} gana");
+                }
+                else turno = (turno + 1) % jugadores.Length; // magnífica esta línea
 
                 // DEBUG
             }
-            if (FinJuego(montones))
-            {
-                Console.WriteLine($"Se acabó, {jugadores[turno]} gana"); // jlwafuvwbvwbvwlvjabvlavaalv fixear esto
-            }
+            
         }
 
         static void Inicializa(int[] montones, string[] jugadores, out int turno)
