@@ -18,7 +18,7 @@ namespace Main
             Inicializa(montones, jugadores, out turno);
             Render(montones, jugadores, turno, pals, mon);
 
-            while (!FinJuego(montones))
+            while (!FinJuego(montones) && mon != -1)
             {
                 if (turno == 3)
                 {
@@ -40,7 +40,12 @@ namespace Main
 
                 // DEBUG
             }
-            
+
+            if (mon == -1)
+            {
+                Console.Write("Has salido");
+            }
+
         }
 
         static void Inicializa(int[] montones, string[] jugadores, out int turno)
@@ -81,9 +86,9 @@ namespace Main
             {
                 Console.Write($"Humano, elige montón del 0 al {NUM_MONTONES - 1} (-1 para terminar): ");
                 mon = int.Parse(Console.ReadLine());
-            } while (mon < -1 || mon >= NUM_MONTONES || montones[mon] < 1);
+            } while (mon < -1 || mon >= NUM_MONTONES || (mon > -1 && montones[mon] < 1));
 
-            if (mon > -1 && montones[mon] > 0)
+            if (mon > -1)
             {
                 do
                 {
