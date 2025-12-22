@@ -15,7 +15,18 @@ namespace Main
             int mon = 0;
             int pals = 0;
 
-            Inicializa(montones, jugadores, out turno);
+            // recuperar partida
+            string r = " ";
+            do
+            {
+                Console.Write("Recuperar partida [s/n]? ");
+                r = Console.ReadLine();
+            } while (r != "s" && r != "n");
+
+            // iniciamos normal o recuperamos partida
+            if (r == "n") Inicializa(montones, jugadores, out turno);
+            else LeeArchivo(montones, out turno);
+
             Render(montones, jugadores, turno, pals, mon);
 
             while (!FinJuego(montones) && mon != -1)
@@ -32,18 +43,34 @@ namespace Main
                 Render(montones, jugadores, turno, pals, mon);
 
 
-                if (FinJuego(montones))
+                if (mon != -1 && !FinJuego(montones))
                 {
-                    Console.WriteLine($"Se acabó, {jugadores[turno]} gana");
+                    if (Palindromo(montones))
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine($"Palíndromo! {jugadores[turno]} repite turno");
+                        Console.ResetColor();
+                    }
+                    else turno = (turno + 1) % jugadores.Length;
                 }
-                else turno = (turno + 1) % jugadores.Length; // magnífica esta línea
-
-                // DEBUG
             }
 
-            if (mon == -1)
+            if (mon != -1) Console.WriteLine("El ganador es: " + jugadores[turno]);
+            // si no ha terminado, preguntamos si se quiere guardar
+            else
             {
-                Console.Write("Has salido");
+                r = "";
+                do
+                {
+                    Console.Write("Guardar partida [s/n]? ");
+                    r = Console.ReadLine();
+                } while (r != "s" && r != "n");
+
+                if (r == "s") // guardar
+                {
+                    GuardaPartida(montones, turno);
+                    Console.WriteLine("Partida guardada en \"saved\"");
+                }
             }
 
         }
@@ -84,7 +111,9 @@ namespace Main
         {
             do
             {
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.Write($"Humano, elige montón del 0 al {NUM_MONTONES - 1} (-1 para terminar): ");
+                Console.ResetColor();
                 mon = int.Parse(Console.ReadLine());
             } while (mon < -1 || mon >= NUM_MONTONES || (mon > -1 && montones[mon] < 1));
 
@@ -124,6 +153,32 @@ namespace Main
             return false;
         }
 
-        //enddd
+        static bool Palindromo(int[] montones)
+        {
+            for (int i = 0; i <= NUM_MONTONES / 2; i++)
+            {
+                if (montones[i] != montones[NUM_MONTONES - 1 - i]) { return false; }
+            }
+            return true;
+        }
+
+        static void GuardaPartida(int[] montones, int turno)
+        {
+            StreamWriter file = new StreamWriter("saved");
+            for (int i = 0; i < montones.Length; i++) file.Write(montones[i] + " ");
+            file.Write(turno);
+            file.Close();
+        }
+
+        static void LeeArchivo(int[] montones, out int turno)
+        {
+            StreamReader file = new StreamReader("saved");
+            string[] s = file.ReadLine().Split(' ');
+
+            for (int i = 0; i < s.Length - 1; i++) montones[i] = int.Parse(s[i]);
+
+            turno = int.Parse(s[s.Length - 1]);
+            file.Close();
+        }
     }
 }
