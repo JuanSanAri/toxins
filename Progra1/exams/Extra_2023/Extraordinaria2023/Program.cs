@@ -64,6 +64,12 @@ class Hitori
         {
             for (int j = 0; j < N; j++)
             {
+                // Cursor
+                if (i == fil && j == col)
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                }
+                // Texto
                 if (tachadas[i, j] == false)
                 {
                     Console.Write(tab[i, j] + " ");
@@ -75,6 +81,7 @@ class Hitori
                     Console.ResetColor();
                     Console.Write(" ");
                 }
+                Console.ResetColor(); // resetColor del cursor
             }
             Console.WriteLine();
         }
@@ -84,11 +91,19 @@ class Hitori
 
     static void ClickCasilla(ref bool[,] tachadas, int fil, int col)
     {
-        if (tachadas[fil, col] == false)
+        bool limit;
+        bool contiguasTachadas;
+
+        for (int i = 0; i < N; i++)
         {
-            tachadas[fil, col] = true;
+            for (int j = 0; j < N; j++)
+            {
+                if (i - 1 >= 0 && i + 1 < N && j - 1 >= 0 && j + 1 < N)
+            }
         }
-        if (tachadas[fil, col] == true) tachadas[fil, col] = false;
+
+
+        //tachadas[fil, col] = !tachadas[fil, col];
     }
 
     static char LeeInput()
