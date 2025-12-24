@@ -137,7 +137,7 @@ class Hitori
         // Si te fijas lo que buscamos son excepciones, en vez de decirle que trabaje solo
         // cuando se cumplen un montón de condiciones, le decimos: oye trabaja excepto cuando pasa esto.
 
-        // barbaridad de script
+        // enresumen, barbaridad de script, recordar siempre que se repase
     }
 
     static int[] DameFil(int[,] tab, bool[,] tachadas, int i)
