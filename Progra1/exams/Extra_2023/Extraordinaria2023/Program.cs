@@ -146,7 +146,9 @@ class Hitori
         {
             for (int j = i + 1; j < N; j++)
             {
-                if (v[i] == v[j]) return true;
+                if (v[i] == v[j] && v[i] != -1) return true;
+                // ^^en esta condición podría meter un "&& v[j] != -1" al final
+                // pero para lo que nos pide con esto está perfecto
             }
         }
         return false;
