@@ -27,11 +27,9 @@ class Hitori
 
 
         //---
-        bool acabado = false;
-
         Render(tab, tachadas, fil, col);
 
-        while (!acabado)
+        while (RepetidosMatriz(tab, tachadas))
         {
             char c = LeeInput();
             ProcesaInput(c, tachadas, ref fil, ref col);
@@ -52,6 +50,12 @@ class Hitori
             }
             Console.WriteLine();
             Console.Write($"fil: {fil}, col: {col}");
+        }
+
+        if (!RepetidosMatriz(tab, tachadas))
+        {
+            Console.Clear();
+            Console.WriteLine("has ganao");
         }
 
     } // Main
@@ -118,7 +122,7 @@ class Hitori
 
         for (int j = 0; j < N; j++)
         {
-            if (!tachadas[i, j]) arrayFil[j] = -1;
+            if (tachadas[i, j]) arrayFil[j] = -1;
             else arrayFil[j] = tab[i, j];
         }
         return arrayFil;
@@ -130,10 +134,40 @@ class Hitori
 
         for (int j = 0; j < N; j++)
         {
-            if (!tachadas[j, i]) arrayCol[j] = -1;
+            if (tachadas[j, i]) arrayCol[j] = -1;
             else arrayCol[j] = tab[j, i];
         }
         return arrayCol;
+    }
+
+    static bool RepetidosVector(int[] v)
+    {
+        for (int i = 0; i < N; i++)
+        {
+            for (int j = i + 1; j < N; j++)
+            {
+                if (v[i] == v[j]) return true;
+            }
+        }
+        return false;
+    }
+
+    static bool RepetidosMatriz(int[,] tab, bool[,] tachadas)
+    {
+        int[] columna = new int[N];
+        int[] fila = new int[N];
+
+        for (int i = 0; i < N; i++)
+        {
+            fila = DameFil(tab, tachadas, i);
+            columna = DameCol(tab, tachadas, i);
+
+            bool checkCol = RepetidosVector(columna);
+            bool checkFil = RepetidosVector(fila);
+
+            if (checkCol || checkFil) return true;
+        }
+        return false;
     }
 
     static char LeeInput()
