@@ -38,20 +38,6 @@ class Hitori
             else ProcesaInput(c, tachadas, ref fil, ref col);
 
             Render(tab, tachadas, fil, col);
-
-            // DEBUG
-            Console.SetCursorPosition(0, 10);
-            Console.WriteLine();
-            for (int i = 0; i < N; i++)
-            {
-                for (int j = 0; j < N; j++)
-                {
-                    Console.Write(tachadas[i, j] + " ");
-                }
-                Console.WriteLine();
-            }
-            Console.WriteLine();
-            Console.Write($"fil: {fil}, col: {col}");
         }
 
         if (!RepetidosMatriz(tab, tachadas))
@@ -59,7 +45,7 @@ class Hitori
             Console.Clear();
             Console.WriteLine("has ganao");
         }
-        if (salir) { SalvaArchivo("saved.txt", tab, tachadas); }
+        if (salir) { SalvaArchivo("file", tab, tachadas); }
 
     } // Main
 
@@ -214,7 +200,7 @@ class Hitori
 
     static void SalvaArchivo(string file, int[,] tab, bool[,] tachadas)
     {
-        StreamWriter archivo = new StreamWriter("saved");
+        StreamWriter archivo = new StreamWriter("file");
         archivo.WriteLine(N);
         for (int i = 0; i < N; i++)
         {
@@ -234,6 +220,11 @@ class Hitori
             archivo.WriteLine();
         }
         archivo.Close();
+    }
+
+    static void LeeArchivo(string file, int[,] tab, bool[,] tachadas, int fil, int col)
+    {
+
     }
 
     //end
