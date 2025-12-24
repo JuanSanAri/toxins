@@ -3,8 +3,9 @@ using System.IO;
 
 class Hitori
 {
-
+    //-----------------------
     const int N = 4; // para evitar usar getLenght() tol rato
+    //-----------------------
     static void Main()
     {
         int[,] tab;      // números del tablero
@@ -26,10 +27,26 @@ class Hitori
             {false, false, false, false}};
 
 
-        //---
+        //----------------------------------------------
         bool salir = false;
-        Render(tab, tachadas, fil, col);
+        string file = "file";
+        string respuesta = " ";
 
+        // inicializar
+        do
+        {
+            Console.Write("Recuperar partida [s/n]? ");
+            respuesta = Console.ReadLine();
+        } while (respuesta != "s" && respuesta != "n");
+
+        if (respuesta == "n") Render(tab, tachadas, fil, col);
+        else
+        {
+            LeeArchivo(file, tab, tachadas, fil, col);
+            Render(tab, tachadas, fil, col);
+        }
+
+        // bucle de juego
         while (RepetidosMatriz(tab, tachadas) && !salir)
         {
             char c = LeeInput();
@@ -40,12 +57,30 @@ class Hitori
             Render(tab, tachadas, fil, col);
         }
 
+        // condición ganar
         if (!RepetidosMatriz(tab, tachadas))
         {
             Console.Clear();
             Console.WriteLine("has ganao");
         }
-        if (salir) { SalvaArchivo("file", tab, tachadas); }
+        // salir voluntariamente
+        if (salir)
+        {
+            Console.Clear();
+            string r = "";
+            do
+            {
+                Console.Write("Has salido!! Te gustaría guardar la partida? [s/n]");
+                r = Console.ReadLine();
+            } while (r != "s" && r != "n");
+
+
+            if (r == "s")
+            {
+                SalvaArchivo("file", tab, tachadas);
+                Console.WriteLine("Partida guardada en el archivo file");
+            }
+        }
 
     } // Main
 
@@ -79,7 +114,7 @@ class Hitori
             Console.WriteLine();
         }
 
-        Console.SetCursorPosition(col, fil);
+        Console.SetCursorPosition(col * 2, fil);
     }
 
     static void ClickCasilla(ref bool[,] tachadas, int fil, int col)
@@ -200,7 +235,7 @@ class Hitori
 
     static void SalvaArchivo(string file, int[,] tab, bool[,] tachadas)
     {
-        StreamWriter archivo = new StreamWriter("file");
+        StreamWriter archivo = new StreamWriter(file);
         archivo.WriteLine(N);
         for (int i = 0; i < N; i++)
         {
@@ -224,8 +259,41 @@ class Hitori
 
     static void LeeArchivo(string file, int[,] tab, bool[,] tachadas, int fil, int col)
     {
+        StreamReader archivo = new StreamReader(file);
 
+        // N
+        string linea = archivo.ReadLine();
+        int N = int.Parse(linea);
+
+        // matriz tab
+        for (int i = 0; i < N; i++)
+        {
+            linea = archivo.ReadLine();
+            string[] tabN = linea.Split(' ');
+            for (int j = 0; j < N; j++)
+            {
+                tab[i, j] = int.Parse(tabN[j]);
+            }
+        }
+
+        // matriz tachadas
+        for (int i = 0; i < N; i++)
+        {
+            linea = archivo.ReadLine();
+            string[] tachadasN = linea.Split(' ');
+            for (int j = 0; j < N; j++)
+            {
+                if (tachadasN[j] == "t")
+                {
+                    tachadas[i, j] = true;
+                }
+                else
+                {
+                    tachadas[i, j] = false;
+                }
+            }
+        }
+        archivo.Close();
     }
-
     //end
 }
