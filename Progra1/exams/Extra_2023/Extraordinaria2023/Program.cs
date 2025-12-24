@@ -3,6 +3,8 @@ using System.IO;
 
 class Hitori
 {
+
+    const int N = 4; // para evitar usar getLenght() tol rato
     static void Main()
     {
         int[,] tab;      // números del tablero
@@ -24,9 +26,70 @@ class Hitori
             {false, false, false, false}};
 
 
+        //---
+        bool acabado = false;
+
+        Render(tab, tachadas, fil, col);
+
+        while (!acabado)
+        {
+            char c = LeeInput();
+            ProcesaInput(c, tachadas, ref fil, ref col);
+
+            Render(tab, tachadas, fil, col);
+
+
+            // DEBUG
+            Console.SetCursorPosition(0, 10);
+            Console.WriteLine();
+            for (int i = 0; i < N; i++)
+            {
+                for (int j = 0; j < N; j++)
+                {
+                    Console.Write(tachadas[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine();
+            Console.Write($"fil: {fil}, col: {col}");
+        }
+
     } // Main
 
+    static void Render(int[,] tab, bool[,] tachadas, int fil, int col)
+    {
+        Console.Clear();
 
+        for (int i = 0; i < N; i++)
+        {
+            for (int j = 0; j < N; j++)
+            {
+                if (tachadas[i, j] == false)
+                {
+                    Console.Write(tab[i, j] + " ");
+                }
+                else
+                {
+                    Console.BackgroundColor = ConsoleColor.DarkRed;
+                    Console.Write(tab[i, j]);
+                    Console.ResetColor();
+                    Console.Write(" ");
+                }
+            }
+            Console.WriteLine();
+        }
+
+        Console.SetCursorPosition(col, fil);
+    }
+
+    static void ClickCasilla(ref bool[,] tachadas, int fil, int col)
+    {
+        if (tachadas[fil, col] == false)
+        {
+            tachadas[fil, col] = true;
+        }
+        if (tachadas[fil, col] == true) tachadas[fil, col] = false;
+    }
 
     static char LeeInput()
     {
@@ -53,5 +116,17 @@ class Hitori
         return d;
     }
 
+    static void ProcesaInput(char c, bool[,] tachadas, ref int fil, ref int col)
+    {
+        // eje x
+        if (c == 'l' && col > 0) { col--; }
+        if (c == 'r' && col < N - 1) { col++; }
+        // eje y
+        if (c == 'u' && fil > 0) { fil--; }
+        if (c == 'd' && fil < N - 1) { fil++; }
 
+        if (c == 'c') { ClickCasilla(ref tachadas, fil, col); }
+    }
+
+    //end
 }
