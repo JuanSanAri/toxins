@@ -100,8 +100,16 @@ class Hitori
         if (col < N - 1 && tachadas[fil, col + 1]) { puedeTachar = false; }
 
         // tachar
-        if (puedeTachar && !tachadas[fil, col]) { tachadas[fil, col] = true; }
-        else tachadas[fil, col] = false;
+        if (tachadas[fil, col]) { tachadas[fil, col] = false; }
+        else if (puedeTachar) { tachadas[fil, col] = true; }
+
+        // NOTA: este método es importantísimo, ayuda un montón a la comprensión
+        // de límites y te remodela la cabeza a mejor cuando estás empezando a programar
+
+        // Si te fijas lo que buscamos son excepciones, en vez de decirle que trabaje solo
+        // cuando se cumplen un montón de condiciones, le decimos: oye trabaja excepto cuando pasa esto.
+
+        // barbaridad de script
     }
 
     static char LeeInput()
