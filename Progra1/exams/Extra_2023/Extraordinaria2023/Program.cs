@@ -27,15 +27,17 @@ class Hitori
 
 
         //---
+        bool salir = false;
         Render(tab, tachadas, fil, col);
 
-        while (RepetidosMatriz(tab, tachadas))
+        while (RepetidosMatriz(tab, tachadas) && !salir)
         {
             char c = LeeInput();
-            ProcesaInput(c, tachadas, ref fil, ref col);
+
+            if (c == 'q') { salir = true; }
+            else ProcesaInput(c, tachadas, ref fil, ref col);
 
             Render(tab, tachadas, fil, col);
-
 
             // DEBUG
             Console.SetCursorPosition(0, 10);
@@ -57,6 +59,7 @@ class Hitori
             Console.Clear();
             Console.WriteLine("has ganao");
         }
+        if (salir) { SalvaArchivo("saved.txt", tab, tachadas); }
 
     } // Main
 
@@ -207,6 +210,30 @@ class Hitori
         if (c == 'd' && fil < N - 1) { fil++; }
 
         if (c == 'c') { ClickCasilla(ref tachadas, fil, col); }
+    }
+
+    static void SalvaArchivo(string file, int[,] tab, bool[,] tachadas)
+    {
+        StreamWriter archivo = new StreamWriter("saved");
+        archivo.WriteLine(N);
+        for (int i = 0; i < N; i++)
+        {
+            for (int j = 0; j < N; j++)
+            {
+                archivo.Write(tab[i, j] + " ");
+            }
+            archivo.WriteLine();
+        }
+        for (int i = 0; i < N; i++)
+        {
+            for (int j = 0; j < N; j++)
+            {
+                if (tachadas[i, j]) archivo.Write("t ");
+                else archivo.Write("f ");
+            }
+            archivo.WriteLine();
+        }
+        archivo.Close();
     }
 
     //end
