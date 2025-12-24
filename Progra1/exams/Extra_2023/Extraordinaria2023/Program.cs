@@ -91,29 +91,14 @@ class Hitori
 
     static void ClickCasilla(ref bool[,] tachadas, int fil, int col)
     {
-        for (int i = 0; i < N; i++)
-        {
-            for (int j = 0; j < N; j++)
-            {
-                // lados
-                if ((i - 1 < 0) && (tachadas[i + 1, j] == false) && (tachadas[i, j + 1] == false) && (tachadas[i, j - 1] == false)) { tachadas[i, j] = true; } // arriba
-                else if ((i + 1 > N - 1) && (tachadas[i - 1, j] == false) && (tachadas[i, j + 1] == false) && (tachadas[i, j - 1] == false)) { tachadas[i, j] = true; } // abajo
-                else if ((j - 1 < 0) && (tachadas[i, j + 1] == false) && (tachadas[i + 1, j] == false) && (tachadas[i - 1, j] == false)) { tachadas[i, j] = true; } // izquierda 
-                else if ((j + 1 > N - 1) && (tachadas[i, j - 1] == false) && (tachadas[i + 1, j] == false) && (tachadas[i - 1, j] == false)) { tachadas[i, j] = true; } // derecha
-                // esquinas
-                else if ((j + 1 > N - 1) && (tachadas[i, j - 1] == false) && (i + 1 > N - 1) && (tachadas[i - 1, j] == false)) { tachadas[i, j] = true; } // abajo-derecha
-                else if ((j - 1 < 0) && (tachadas[i, j + 1] == false) && (i - 1 < 0) && (tachadas[i - 1, j] == false)) { tachadas[i, j] = true; } // abajo-izquierda
-                else if ((j - 1 < 0) && (tachadas[i, j + 1] == false) && (i - 1 < 0) && (tachadas[i + 1, j] == false)) { tachadas[i, j] = true; } // arriba-izquierda
-                else if ((j + 1 > N - 1) && (tachadas[i, j - 1] == false) && (i - 1 < 0) && (tachadas[i + 1, j] == false)) { tachadas[i, j] = true; } // arriba-derecha
-                // centro
-                else if ((tachadas[i + 1, j] == false) && (tachadas[i - 1, j] == false) && (tachadas[i, j + 1] == false) && (tachadas[i, j - 1] == false)) { tachadas[i, j] = true; }
+        bool puedeTachar = false;
 
-                // destachar
-                if (tachadas[i, j] == true) { tachadas[i, j] = false; }
+        // condiciones tachado
+        if ((fil > 0 && !tachadas[fil - 1, col]) && (fil < N - 1 && !tachadas[fil + 1, col]) && (col > 0 && !tachadas[fil, col - 1]) && (col < N - 1 && !tachadas[fil, col + 1])) { puedeTachar = true; }
 
-            }
-        }
-        //tachadas[fil, col] = !tachadas[fil, col];
+        // tachar
+        if (puedeTachar && !tachadas[fil, col]) { tachadas[fil, col] = true; }
+        else tachadas[fil, col] = false;
     }
 
     static char LeeInput()
