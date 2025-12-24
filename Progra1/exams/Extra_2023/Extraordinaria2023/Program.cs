@@ -91,10 +91,13 @@ class Hitori
 
     static void ClickCasilla(ref bool[,] tachadas, int fil, int col)
     {
-        bool puedeTachar = false;
+        bool puedeTachar = true;
 
         // condiciones tachado
-        if ((fil > 0 && !tachadas[fil - 1, col]) && (fil < N - 1 && !tachadas[fil + 1, col]) && (col > 0 && !tachadas[fil, col - 1]) && (col < N - 1 && !tachadas[fil, col + 1])) { puedeTachar = true; }
+        if (fil > 0 && tachadas[fil - 1, col]) { puedeTachar = false; }
+        if (fil < N - 1 && tachadas[fil + 1, col]) { puedeTachar = false; }
+        if (col > 0 && tachadas[fil, col - 1]) { puedeTachar = false; }
+        if (col < N - 1 && tachadas[fil, col + 1]) { puedeTachar = false; }
 
         // tachar
         if (puedeTachar && !tachadas[fil, col]) { tachadas[fil, col] = true; }
