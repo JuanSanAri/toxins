@@ -112,6 +112,30 @@ class Hitori
         // barbaridad de script
     }
 
+    static int[] DameFil(int[,] tab, bool[,] tachadas, int i)
+    {
+        int[] arrayFil = new int[N];
+
+        for (int j = 0; j < N; j++)
+        {
+            if (!tachadas[i, j]) arrayFil[j] = -1;
+            else arrayFil[j] = tab[i, j];
+        }
+        return arrayFil;
+    }
+
+    static int[] DameCol(int[,] tab, bool[,] tachadas, int i)
+    {
+        int[] arrayCol = new int[N];
+
+        for (int j = 0; j < N; j++)
+        {
+            if (!tachadas[j, i]) arrayCol[j] = -1;
+            else arrayCol[j] = tab[j, i];
+        }
+        return arrayCol;
+    }
+
     static char LeeInput()
     {
         char d = ' ';
