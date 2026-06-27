@@ -1,7 +1,7 @@
 # toxins
 
 Bienvenid@ a **toxins**, mi biblioteca de proyectos universitarios (Grado en Desarrollo de Videojuegos en la UCM).  
-Aquí encontrarás todo mi progreso en programación, desde pequeños ejercicios hasta proyectos más completos.
+Aquí encontrarás todo mi progreso en programación, desde pequeños ejercicios hasta proyectos y exámenes.
 
 ---
 
