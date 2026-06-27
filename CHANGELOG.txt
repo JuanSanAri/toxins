@@ -1,0 +1,14 @@
+
+27/06/2026
+Creadas carpetas de organización
+por ahora solo subido cosas de fp1:
+- exámenes extra2025fp1, extra2023fp1, ordinaria2025fp1
+
+
+PENDIENTE:
+- Exámenes restantes de fp1:
+	extra2024, ordinaria2023, ordinaria2024
+- PRÁCTICAS lo vamos a dejar tal y como estaba, REVISAR CÓDIGO
+- FP1 HOJAS DE EJERCICIOS
+
+fp2 luego y por último pvli
