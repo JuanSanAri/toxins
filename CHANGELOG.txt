@@ -7,7 +7,7 @@ por ahora solo subido cosas de fp1:
 
 PENDIENTE:
 - Exámenes restantes de fp1:
-	extra2024, ordinaria2023, ordinaria2024
+	extra2024, ordinaria2023, ordinaria2024(revisar)
 - PRÁCTICAS lo vamos a dejar tal y como estaba, REVISAR CÓDIGO
 - FP1 HOJAS DE EJERCICIOS
 
