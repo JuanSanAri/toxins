@@ -14,7 +14,7 @@ El propósito de este repositorio es:
 
 ---
 
-Organización: Curso > Asignatura > Recursos
+Organización: Curso > Asignatura > Recurso > 2 subcarpetas de recurso (enunciado/solución)
 ###### Nota: cada recurso tiene un número, el cual indica el curso del recurso (p.e.: Extra_2023 = Extraordinaria del curso 2023-2024)
 
 Si quieres comentar, sugerir mejoras o simplemente saludar, puedes abrir un *issue* en este repositorio.  
