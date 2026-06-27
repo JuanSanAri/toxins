@@ -14,11 +14,11 @@ El propósito de este repositorio es:
 
 ---
 
-Cada proyecto se encuentra en su propia carpeta.
+Organización: Curso > Asignatura > Recursos
 ###### Nota: cada recurso tiene un número, el cual indica el curso del recurso (p.e.: Extra_2023 = Extraordinaria del curso 2023-2024)
 
 Si quieres comentar, sugerir mejoras o simplemente saludar, puedes abrir un *issue* en este repositorio.  
-¡Cualquier feedback es bienvenido!
+¡Cualquier feedback es bienvenido! Y recordad que soy alumno también, me equivoco jeje.
 
 ---
 
