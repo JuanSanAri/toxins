@@ -10,6 +10,7 @@ El propósito de este repositorio es:
 - Tener todos mis proyectos de programación organizados en un solo lugar.
 - Mostrar mi evolución y aprendizaje en programación.
 - Facilitar la consulta y reutilización de mis proyectos en el futuro.
+- Ayudar a quien pueda mirar esto con la mayor cantidad de soluciones.
 
 ---
 
