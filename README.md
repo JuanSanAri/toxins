@@ -1,6 +1,6 @@
 # toxins
 
-Bienvenid@ a **toxins**, mi biblioteca personal de proyectos y mini-juegos desarrollados a lo largo del tiempo.  
+Bienvenid@ a **toxins**, mi biblioteca personal de proyectos universitarios.  
 Aquí encontrarás todo mi progreso en programación, desde pequeños ejercicios hasta proyectos más completos.
 
 ---
