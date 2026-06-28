@@ -26,6 +26,7 @@ Temas que uso!!:
 - VS: Toshaka Rin del pack de temas de Doki Theme:
     - Apariencia del editor => Coincidir con el tema
     - Palabra clave y Palabra clave: control => ajustado el color (original no se veía na)
+    - Sin sticker
 - VSCode: Night Wolf (Black)
 
 #### *Juan Sánchez, alumno de GDV en la FDI de la UCM, 2025* 
