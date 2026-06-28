@@ -7,7 +7,7 @@ Aquí encontrarás todo mi progreso en programación, desde pequeños ejercicios
 
 El propósito de este repositorio es:
 
-- Tener todos mis proyectos de programación organizados en un solo lugar.
+- Tener todos los proyectos y ejericicos de la carrera organizados en un solo lugar.
 - Mostrar mi evolución y aprendizaje en programación.
 - Facilitar la consulta y reutilización de mis proyectos en el futuro.
 - Ayudar a quien pueda mirar esto con la mayor cantidad de soluciones.
@@ -24,8 +24,8 @@ Si quieres comentar, sugerir mejoras o simplemente saludar, puedes abrir un *iss
 
 Temas que uso!!:
 - VS: Toshaka Rin del pack de temas de Doki Theme:
-######      - Apariencia del editor => Coincidir con el tema
-######      - Palabra clave y Palabra clave: control => ajustado el color (original no se veía na)
+    - Apariencia del editor => Coincidir con el tema
+    - Palabra clave y Palabra clave: control => ajustado el color (original no se veía na)
 - VSCode: Night Wolf (Black)
 
 #### *Juan Sánchez, alumno de GDV en la FDI de la UCM, 2025* 
