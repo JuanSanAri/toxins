@@ -7,7 +7,7 @@ Aquí encontrarás todo mi progreso en programación, desde pequeños ejercicios
 
 El propósito de este repositorio es:
 
-- Tener todos los proyectos y ejericicos de la carrera organizados en un solo lugar.
+- Tener todos los proyectos y ejercicios de la carrera organizados en un solo lugar.
 - Mostrar mi evolución y aprendizaje en programación.
 - Facilitar la consulta y reutilización de mis proyectos en el futuro.
 - Ayudar a quien pueda mirar esto con la mayor cantidad de soluciones.
