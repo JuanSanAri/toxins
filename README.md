@@ -22,6 +22,10 @@ Si quieres comentar, sugerir mejoras o simplemente saludar, puedes abrir un *iss
 
 ---
 
-###### Tema que yo uso en VS y VSCode: https://marketplace.visualstudio.com/items?itemName=MadsKristensen.GitHubThemes
+Temas que uso!!:
+###### VS: Toshaka Rin del pack de temas de Doki Theme:
+###### - Apariencia del editor => Coincidir con el tema
+###### - Palabra clave y Palabra clave: control => ajustado el color (original no se veía na)
+###### VSCode: Night Wolf (Black)
 
 #### *Juan Sánchez, alumno de GDV en la FDI de la UCM, 2025* 
