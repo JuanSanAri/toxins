@@ -144,40 +144,49 @@ namespace Main
         static bool FinJuego(int[] montones)
         {
             int contVacios = 0;
+            bool finJ = false;
 
             for (int i = 0; i < NUM_MONTONES; i++)
             {
                 if (montones[i] == 0) contVacios++;
-                if (contVacios == NUM_MONTONES) return true;
             }
-            return false;
+            if (contVacios == NUM_MONTONES) finJ = true;
+
+            return finJ;
         }
 
         static bool Palindromo(int[] montones)
         {
+            bool pal = true;
             for (int i = 0; i <= NUM_MONTONES / 2; i++)
             {
-                if (montones[i] != montones[NUM_MONTONES - 1 - i]) { return false; }
+                if (montones[i] != montones[NUM_MONTONES - 1 - i]) pal = false;
             }
-            return true;
+            return pal;
         }
 
         static void GuardaPartida(int[] montones, int turno)
         {
             StreamWriter file = new StreamWriter("saved");
-            for (int i = 0; i < montones.Length; i++) file.Write(montones[i] + " ");
+
+            for (int i = 0; i < montones.Length; i++)
+                file.Write(montones[i] + " ");
+
             file.Write(turno);
+
             file.Close();
         }
 
         static void LeeArchivo(int[] montones, out int turno)
         {
             StreamReader file = new StreamReader("saved");
-            string[] s = file.ReadLine().Split(' ');
 
-            for (int i = 0; i < s.Length - 1; i++) montones[i] = int.Parse(s[i]);
+            string[] s = file.ReadLine().Split(' ');
+            for (int i = 0; i < s.Length - 1; i++)
+                montones[i] = int.Parse(s[i]);
 
             turno = int.Parse(s[s.Length - 1]);
+
             file.Close();
         }
     }
