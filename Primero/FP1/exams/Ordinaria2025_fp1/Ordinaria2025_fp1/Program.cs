@@ -144,15 +144,15 @@
     static bool TabLleno(char[,] tab)
     {
         int N = tab.GetLength(0);
-
+        bool lleno = true;
         for (int i = 0; i < N; i++)
         {
             for (int j = 0; j < N; j++)
             {
-                if (tab[i, j] == '.') return false;
+                if (tab[i, j] == '.') lleno = false;
             }
         }
-        return true;
+        return lleno;
     }
 
     static void SacaFilCol(int k, char[,] tab, char[] filk, char[] colk)

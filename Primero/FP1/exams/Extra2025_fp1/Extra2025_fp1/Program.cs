@@ -1,7 +1,4 @@
-﻿// Nombre Apellido1 Apellido2
-// Laboratorio, puesto
-
-using System;
+﻿using System;
 using System.Runtime.CompilerServices;
 using static System.Net.WebRequestMethods;
 //using System.Threading;

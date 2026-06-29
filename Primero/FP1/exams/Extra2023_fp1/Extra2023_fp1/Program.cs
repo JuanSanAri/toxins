@@ -1,5 +1,4 @@
-﻿
-class Hitori
+﻿class Hitori
 {
     static void Main()
     {
@@ -190,14 +189,15 @@ class Hitori
 
     static bool RepetidosVector(int[] v)
     {
+        bool repVec = false;
         for (int i = 0; i < v.Length; i++)
         {
             for (int j = i + 1; j < v.Length; j++)
             {
-                if (v[i] == v[j] && v[i] != -1) return true;
+                if (v[i] == v[j] && v[i] != -1) repVec = true;
             }
         }
-        return false;
+        return repVec;
     }
 
     static bool RepetidosMatriz(int[,] tab, bool[,] tachadas)
