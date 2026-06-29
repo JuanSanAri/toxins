@@ -1,3 +1,6 @@
+29/06/2026
+Terminado FP1, practicas y ejercicios de FP2 también
+- faltan exámenes
 
 28/06/2026
 Avanzando con terminar la carpeta de fp1:
@@ -9,10 +12,10 @@ Creadas carpetas de organización
 por ahora solo subido cosas de fp1:
 - exámenes extra2025fp1, extra2023fp1, ordinaria2025fp1
 
-
 PENDIENTE:
-- Exámenes restantes de fp1:
-	extra2024
-- PRÁCTICAS lo vamos a dejar tal y como estaba, REVISAR CÓDIGO
-
 fp2 luego y por último pvli
+
+NOMENCLATURA (para acordarme):
+examenes:
+practicas: AÑOpr1_Nombre
+ejercicios: hojaX, pdf de enunciado fuera de la solucion (no necesaria carpeta de enunciado)
