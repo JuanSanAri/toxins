@@ -40,7 +40,7 @@ Empieza con uso de struct, que si sabes usarlo es lo más simple del examen. Lue
 ---
 
 ## 6. 🔴 LIFE GAME *(Extra 25)*
-**Métodos clave:** TODOS - si cae un examen parecido recuerda priorizar el bucle principal y olvídate del resto si el tiempo aprieta (en este caso, si te sobra algo de tiempo escribe al menos Lee. BuscaPatron y Menu los últimos)
+**Métodos clave:** TODOS - si cae un examen parecido recuerda priorizar el bucle principal y olvídate del resto (si te sobra algo de tiempo escribe al menos Lee. BuscaPatron y Menu los últimos)
 
 CON DIFERENCIA el examen más jodido de toda la historia de FP1 en esta carrera:
 
