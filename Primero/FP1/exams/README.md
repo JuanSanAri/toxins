@@ -44,7 +44,7 @@ Empieza con uso de struct, que si sabes usarlo es lo más simple del examen. Lue
 
 CON DIFERENCIA el examen más jodido de toda la historia de FP1 en esta carrera:
 
-- Tienes que declarar un `Inicializa` con variables que le preguntamos al jugador, que no vienen dadas por ejemplo o declaraadas de antemano como siempre.
+- Tienes que declarar un `Inicializa` con variables que tienes que declarar tú o preguntadas al jugador si has hecho el `Menu`, no vienen dadas por ejemplo o declaradas de antemano como siempre.
 - Para los métodos más fáciles tienes que saber cómo rotar al ser tablero toroidal (pasar del último valor del array al primero sumando).
 - Tablero toroidal + casillas diagonales como vecinas + en `NumVecinos` hay que declarar los datos de los arrays MANUALMENTE con `Prev` y `Next`.
 - No hay `LeeInput` ni `ProcesaInput` que al fin y al cabo son puntos y tiempo regalados, que en este examen son sustituidos por otros métodos que si vas a tardar en hacer.
