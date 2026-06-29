@@ -16,6 +16,9 @@ PENDIENTE:
 fp2 luego y por último pvli
 
 NOMENCLATURA (para acordarme):
-examenes:
-practicas: AÑOpr1_Nombre
-ejercicios: hojaX, pdf de enunciado fuera de la solucion (no necesaria carpeta de enunciado)
+PARA FP:
+  examenes: ConvocatoriaAÑO_fp1
+  practicas: AÑOpr1_Nombre
+  ejercicios: hojaX, pdf de enunciado fuera de la solucion (no necesaria carpeta de enunciado)
+PARA PVLI:
+  examenes:
