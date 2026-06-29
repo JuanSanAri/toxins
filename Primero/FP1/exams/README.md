@@ -1,6 +1,6 @@
 # TIERLIST DE EXÁMENES FP1
 
-##### No es por señalar lo obvio pero si sacas FP1 en la ordinaria mucho mejor. Las extras suelen ser bastante más complejas a la hora de entendimiento general de programación, además de que Jaime considera que venís de un cuatrimestre entero dando FP2 y por ello es justificable que no haga un paseo de examen en la extra.
+###### No es por señalar lo obvio pero si sacas FP1 en la ordinaria mucho mejor. Las extras suelen ser bastante más complejas a la hora de entendimiento general de programación, además de que Jaime considera que venís de un cuatrimestre entero dando FP2 y por ello es justificable que no haga un paseo de examen en la extra.
 
 ---
 
@@ -18,7 +18,7 @@ Parece stacked pero en realidad es en gran parte mecánico. Requiere algunos tru
 
 ---
 
-## 3. 🟡 TAKUZU *(Ordinaria 25)*
+## 3. 🟢 TAKUZU *(Ordinaria 25)*
 **Métodos clave:** Ninguno (el método con más chicha es un ConsoleWrite simulator)
 
 Lo pongo después que los dos anteriores porque eran muy fáciles. Conlleva un poco más de dificultad porque hay como 3 métodos que convergen en 1 (MuestraResultado), pero es MUY mecánico a niveles exagerados. Sacar filas, comprobar x cosa en misma fila/col, etc.
