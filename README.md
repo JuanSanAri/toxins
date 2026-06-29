@@ -17,8 +17,9 @@ El propósito de este repositorio es:
 Organización: Curso > Asignatura > Recurso > 2 subcarpetas de recurso (enunciado/solución)
 ###### Nota: cada recurso tiene un número, el cual indica el curso del recurso (p.e.: Extra_2023 = Extraordinaria del curso 2023-2024)
 
-Si quieres comentar, sugerir mejoras o simplemente saludar, puedes abrir un *issue* en este repositorio.  
+Si quieres comentar, sugerir mejoras o simplemente saludar, puedes abrir un *issue* en este repositorio. 
 ¡Cualquier feedback es bienvenido! Y recordad que soy alumno también, me equivoco jeje.
+Podéis probar a enviarme exámenes para hacerlos y subirlos, soy buencha y si me habláis en la uni o al correo o simplemente me pedís ayuda estaré encantado de dárosla: juasan15@ucm punto es
 
 ---
 
