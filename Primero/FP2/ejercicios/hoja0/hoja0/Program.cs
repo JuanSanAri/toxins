@@ -1,6 +1,4 @@
-﻿using System.Globalization;
-
-namespace hoja0
+﻿namespace hoja0
 {
     internal class Program
     {

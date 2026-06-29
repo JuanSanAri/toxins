@@ -1,2 +1,1 @@
-- LOS ENUNCIADOS ESTÁN DENTRO DE LA CARPETA, son .pdf
 - La carpeta de recursos contienen scripts que hace Jaime en clase, necesarios para algunas hojas, o simplemente correcciones
