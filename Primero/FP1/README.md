@@ -1,2 +1,2 @@
 !! Disclaimer:
-- No me responsabilizo de cualquier acusación realizada a un alumno por plagio o copia, lo que hay aquí subido es todo puramente educativo, algunos scripts/clases/métodos/loquesea pueden estar bien, o podrían estar mejor, así que queda bajo tu responsabilidad saber que hacer con el material.
+- No me responsabilizo de cualquier acusación realizada a un alumno por plagio o copia, lo que hay aquí subido es todo puramente educativo, algunos scripts/clases/métodos/loquesea pueden estar bien, o podrían estar mejor, así que queda bajo tu responsabilidad saber qué hacer con el material.
