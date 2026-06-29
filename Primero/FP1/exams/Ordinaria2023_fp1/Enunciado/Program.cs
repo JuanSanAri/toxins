@@ -12,6 +12,8 @@
             InicializaMazo(mazo, out prim); // método ya implementado que genera el mazo
         }
 
+	// Nota: este método como dice en el main lo daba Jaime pero yo no
+	// lo tengo, por lo que recomiendo hacer el IniMazoAleatorio de primeras
         static void InicializaMazo(int[] mazo, out int prim)
         {
             prim = 0;
