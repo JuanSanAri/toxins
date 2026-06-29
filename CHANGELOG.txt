@@ -1,6 +1,6 @@
 29/06/2026
-Terminado FP1, practicas y ejercicios de FP2 también
-- faltan exámenes
+- Terminado FP1
+FP2: 2 exámenes (falta solo 1), practicas y ejercicios
 
 28/06/2026
 Avanzando con terminar la carpeta de fp1:
@@ -13,7 +13,9 @@ por ahora solo subido cosas de fp1:
 - exámenes extra2025fp1, extra2023fp1, ordinaria2025fp1
 
 PENDIENTE:
-fp2 luego y por último pvli
+- hacer extra2024fp2, readme de exámenes fp2
+- exams pvli
+- proyecto dsi
 
 NOMENCLATURA (para acordarme):
 PARA FP:
@@ -22,3 +24,5 @@ PARA FP:
   ejercicios: hojaX, pdf de enunciado fuera de la solucion (no necesaria carpeta de enunciado)
 PARA PVLI:
   examenes:
+PARA DSI:
+  proyecto final:
