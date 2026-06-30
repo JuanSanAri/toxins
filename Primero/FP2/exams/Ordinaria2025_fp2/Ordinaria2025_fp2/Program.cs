@@ -8,9 +8,10 @@ namespace Sudoku
         static string message = "";
         public static void Main()
         {
+            Console.CursorVisible = false;
             int[,] sud;
 
-            Console.WriteLine("¿Usar sudoku de ejemplo? (s/n)");
+            Console.Write("¿Usar sudoku de ejemplo?(s/n): ");
             string resp = Console.ReadLine();
 
             if (resp == "s" || resp == "S")
@@ -47,6 +48,7 @@ namespace Sudoku
                 {
                     ProcesaInput(c, t);
                     t.Render();
+                    Console.SetCursorPosition(0, 10);
                     Console.WriteLine(message);
                     fin = t.FinJuego();
                 }
@@ -58,18 +60,30 @@ namespace Sudoku
         static int[,] Lee(string file)
         {
             int[,] sud = new int[9, 9];
-            StreamReader sr = new StreamReader(file);
-            for (int i = 0; i < 9; i++)
+            StreamReader sr = null;
+            try
             {
-                string linea = sr.ReadLine();
-                string[] nums = linea.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-                for (int j = 0; j < 9; j++)
+                sr = new StreamReader(file);
+                for (int i = 0; i < 9; i++)
                 {
-                    sud[i, j] = int.Parse(nums[j]);
+                    string[] nums = sr.ReadLine().Split(' ', StringSplitOptions.RemoveEmptyEntries);
+                    for (int j = 0; j < 9; j++)
+                        sud[i, j] = int.Parse(nums[j]);
                 }
+                return sud;
             }
-            sr.Close();
-            return sud;
+            catch (FileNotFoundException)
+            {
+                throw new FileNotFoundException("Archivo no encontrado");
+            }
+            catch (Exception)
+            {
+                throw new Exception("Formato de archivo incorrecto");
+            }
+            finally
+            {
+                if (sr != null) sr.Close();
+            }
         }
 
         static void ProcesaInput(char c, Tablero t)
@@ -97,7 +111,6 @@ namespace Sudoku
                 }
                 catch (Exception e)
                 {
-                    Console.SetCursorPosition(0, 10);
                     message = "Error: " + e.Message;
                 }
             }

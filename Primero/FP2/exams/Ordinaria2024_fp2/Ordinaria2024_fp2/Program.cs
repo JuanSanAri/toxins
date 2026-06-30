@@ -73,9 +73,10 @@ public class Program
 
     static int[,] LeerArchivo(string ruta)
     {
+        StreamReader sr = null;
         try
         {
-            StreamReader sr = new StreamReader(ruta);
+            sr = new StreamReader(ruta);
             int tam = int.Parse(sr.ReadLine());
             int[,] mat = new int[tam + 1, tam + 1];
 
@@ -102,6 +103,10 @@ public class Program
         catch (Exception)
         {
             throw new Exception("Formato de archivo incorrecto");
+        }
+        finally
+        {
+            if (sr != null) sr.Close();
         }
     }
 }

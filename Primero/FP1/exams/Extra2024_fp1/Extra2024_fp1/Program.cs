@@ -105,23 +105,22 @@
         static void Render(char[,] tab, Coor pos)
         {
             Console.Clear();
+            // Tablero
             for (int i = 0; i < tab.GetLength(0); i++)
             {
                 for (int j = 0; j < tab.GetLength(1); j++)
                 {
-                    // Cursor
-                    if (pos.fil == i && pos.col == j)
-                    {
-                        Console.BackgroundColor = ConsoleColor.Gray;
-                        Console.ForegroundColor = ConsoleColor.Black;
-                    }
                     Console.Write(tab[i, j]);
-                    Console.ResetColor();
                     Console.Write(" ");
                 }
                 Console.WriteLine();
             }
+            // Cursor fuera del bucle
             Console.SetCursorPosition(2 * pos.col, pos.fil);
+            Console.BackgroundColor = ConsoleColor.Gray;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.Write(tab[pos.fil, pos.col]);
+            Console.ResetColor();
         }
 
         static char LeeInput()

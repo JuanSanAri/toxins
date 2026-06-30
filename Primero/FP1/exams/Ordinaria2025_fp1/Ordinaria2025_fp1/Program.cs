@@ -82,24 +82,20 @@
         {
             for (int j = 0; j < N; j++)
             {
-                // Color caracteres
                 if (fijas[i, j]) Console.ForegroundColor = ConsoleColor.Blue;
                 else Console.ForegroundColor = ConsoleColor.Yellow;
-                // Color cursor
-                if (i == fil && j == col)
-                {
-                    Console.BackgroundColor = ConsoleColor.Yellow;
-                    Console.ForegroundColor = ConsoleColor.Black;
-                }
-                // Caracter
                 Console.Write(tab[i, j]);
                 Console.ResetColor();
-                // Espacio
                 Console.Write(" ");
             }
             Console.WriteLine();
         }
-        Console.SetCursorPosition(col * 2, fil);
+        // Cursor fuera del bucle
+        Console.SetCursorPosition(2 * col, fil);
+        Console.BackgroundColor = ConsoleColor.Yellow;
+        Console.ForegroundColor = ConsoleColor.Black;
+        Console.Write(tab[fil, col]);
+        Console.ResetColor();
     }
 
     static char LeeInput()

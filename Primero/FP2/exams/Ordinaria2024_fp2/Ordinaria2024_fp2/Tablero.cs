@@ -41,8 +41,10 @@ public class Tablero
     public void Render()
     {
         Console.Clear();
+
+        // Tablero
         // Fila enumerada de arriba y barra separadora
-        Console.Write("   "); // 3 espacios hasta que empezamos a fila numerada
+        Console.Write("   ");
         for (int i = 0; i < N; i++)
         {
             Console.Write(" " + (i + 1));
@@ -60,36 +62,35 @@ public class Tablero
             Console.Write(i + 1 + " |");
             for (int j = 0; j < N; j++)
             {
-                if (i == fil && j == col)
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.BackgroundColor = ConsoleColor.Gray;
-                }
-
-                else Console.BackgroundColor = ConsoleColor.Black;
-                // Lo que se escribe
                 if (mat[i, j] == Casilla.NoDef) Console.Write("  ");
                 else if (mat[i, j] == Casilla.Negra) Console.Write(" 0");
                 else Console.Write(" ·");
-
-                Console.ResetColor();
             }
             Console.Write(" | " + objetivosFila[i]);
             Console.WriteLine();
         }
         // Barra separadora de abajo y objetivosColumna
-        Console.Write("   "); // 4 espacios hasta la barra
+        Console.Write("   ");
         for (int i = 0; i < N; i++)
         {
             Console.Write("--");
         }
         Console.WriteLine();
-        Console.Write("   "); // 5 espacios hasta que empezamos a fila numerada
+        Console.Write("   ");
         for (int i = 0; i < N; i++)
         {
             Console.Write(" " + objetivosColumna[i]);
         }
-        Console.SetCursorPosition(2 * col, fil);
+
+        // Cursor fuera del bucle
+        Console.SetCursorPosition(3 + col * 2, 2 + fil);
+        Console.Write(" ");
+        Console.BackgroundColor = ConsoleColor.Gray;
+        Console.ForegroundColor = ConsoleColor.Black;
+        if (mat[fil, col] == Casilla.NoDef) Console.Write(" ");
+        else if (mat[fil, col] == Casilla.Negra) Console.Write("0");
+        else Console.Write("·");
+        Console.ResetColor();
     }
 
     public void ProcesaInput(char c)
@@ -141,10 +142,7 @@ public class Tablero
 
     public bool Terminado()
     {
-        Lista filsF;
-        Lista colsF;
-        Incorrectas(out filsF, out colsF);
-
+        Incorrectas(out Lista filsF, out Lista colsF);
         return filsF.EsVacia() && colsF.EsVacia();
     }
 
@@ -153,7 +151,7 @@ public class Tablero
         Incorrectas(out Lista filsI, out Lista colsI);
 
         Console.WriteLine();
-        if (!filsI.EsVacia()) Console.WriteLine("Filas incorrectas: " + filsI.AString());
-        if (!colsI.EsVacia()) Console.WriteLine("Columnas incorrectas: " + colsI.AString());
+        if (!filsI.EsVacia()) Console.WriteLine("Filas incorrectas: " + filsI);
+        if (!colsI.EsVacia()) Console.WriteLine("Columnas incorrectas: " + colsI);
     }
 }

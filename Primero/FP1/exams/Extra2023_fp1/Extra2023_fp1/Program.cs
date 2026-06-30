@@ -86,23 +86,20 @@
         {
             for (int j = 0; j < N; j++)
             {
-                // Color cursor
-                if (i == fil && j == col)
-                {
-                    Console.BackgroundColor = ConsoleColor.Gray;
-                    Console.ForegroundColor = ConsoleColor.Black;
-                }
-                // Color tachadas
                 if (tachadas[i, j]) Console.BackgroundColor = ConsoleColor.DarkRed;
-                // Número
                 Console.Write(tab[i, j]);
                 Console.ResetColor();
-                // Espacio entre medias
                 Console.Write(" ");
             }
             Console.WriteLine();
         }
-        Console.SetCursorPosition(col * 2, fil);
+        // Cursor fuera del bucle
+        Console.SetCursorPosition(2 * col, fil);
+        Console.BackgroundColor = ConsoleColor.Gray;
+        Console.ForegroundColor = ConsoleColor.Black;
+        if (tachadas[fil, col]) Console.BackgroundColor = ConsoleColor.DarkRed;
+        Console.Write(tab[fil, col]);
+        Console.ResetColor();
     }
 
     static void ClickCasilla(bool[,] tachadas, int fil, int col)

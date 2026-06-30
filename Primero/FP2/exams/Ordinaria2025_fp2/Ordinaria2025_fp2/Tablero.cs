@@ -41,25 +41,32 @@ namespace Sudoku
         public void Render()
         {
             Console.Clear();
+
+            // Tablero
             for (int i = 0; i < N; i++)
             {
                 for (int j = 0; j < N; j++)
                 {
-                    // Color número
-                    if (mat[i, j].fija) { Console.ForegroundColor = ConsoleColor.Yellow; }
+                    if (mat[i, j].fija) Console.ForegroundColor = ConsoleColor.Yellow;
                     else Console.ForegroundColor = ConsoleColor.Green;
-                    // Color cursor
-                    if (i == cursor.Fil && j == cursor.Col) Console.BackgroundColor = ConsoleColor.Red;
 
-                    // Escritura
-                    if (mat[i, j].num == 0) { Console.Write("·"); }
+                    if (mat[i, j].num == 0) Console.Write("·");
                     else Console.Write(mat[i, j].num);
-                    // Espacio entre nums
+
                     Console.ResetColor();
                     Console.Write(" ");
                 }
                 Console.WriteLine();
             }
+
+            // Cursor fuera del bucle
+            Console.SetCursorPosition(cursor.Col * 2, cursor.Fil);
+            Console.BackgroundColor = ConsoleColor.Red;
+            if (mat[cursor.Fil, cursor.Col].fija) Console.ForegroundColor = ConsoleColor.Yellow;
+            else Console.ForegroundColor = ConsoleColor.Green;
+            if (mat[cursor.Fil, cursor.Col].num == 0) Console.Write("·");
+            else Console.Write(mat[cursor.Fil, cursor.Col].num);
+            Console.ResetColor();
         }
 
         public void MueveCursor(char d)
@@ -130,11 +137,19 @@ namespace Sudoku
 
         public bool FinJuego()
         {
-            for (int i = 0; i < N; i++)
-                for (int j = 0; j < N; j++)
-                    if (mat[i, j].num == 0) return false;
-
-            return true;
+            bool fin = true;
+            int i = 0;
+            while (i < N && fin)
+            {
+                int j = 0;
+                while (j < N && fin)
+                {
+                    if (mat[i, j].num == 0) fin = false;
+                    j++;
+                }
+                i++;
+            }
+            return fin;
         }
 
         public Lista DamePosibles()
