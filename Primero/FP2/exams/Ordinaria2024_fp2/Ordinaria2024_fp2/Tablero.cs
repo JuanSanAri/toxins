@@ -150,8 +150,8 @@ public class Tablero
     {
         Incorrectas(out Lista filsI, out Lista colsI);
 
-        Console.WriteLine();
-        if (!filsI.EsVacia()) Console.WriteLine("Filas incorrectas: " + filsI);
-        if (!colsI.EsVacia()) Console.WriteLine("Columnas incorrectas: " + colsI);
+        Console.SetCursorPosition(0, N + 5);
+        if (!filsI.EsVacia()) Console.WriteLine("Filas incorrectas: " + filsI.AString());
+        if (!colsI.EsVacia()) Console.WriteLine("Columnas incorrectas: " + colsI.AString());
     }
 }

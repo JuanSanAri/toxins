@@ -71,11 +71,6 @@
 		}
 
 		// version recursiva
-		// public string AStringRec() { }
-
-		
+		// public string AStringRec() { }	
 	}
-
-
 }
-

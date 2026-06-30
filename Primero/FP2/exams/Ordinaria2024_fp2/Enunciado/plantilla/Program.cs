@@ -28,7 +28,7 @@ public class Program {
                 case "A":          d = 'a'; break;  // leer de archivo   
                 case "N":          d = 'n'; break;  // casilla negra
                 case "B":          d = 'b'; break;  // casilla blanca 
-                case "p":          d = 'p'; break;  // pista  
+                case "P":          d = 'p'; break;  // pista  
                 case "Spacebar":   d = 's'; break;  // limpiar casilla
                 case "Escape":     d = 'q'; break;  // terminar
                 default:           d = ' '; break;

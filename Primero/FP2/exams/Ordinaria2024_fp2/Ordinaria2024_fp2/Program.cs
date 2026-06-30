@@ -15,6 +15,7 @@ public class Program
         // Variables y cosas
         Console.CursorVisible = false;
         bool terminado = false;
+        bool exit = false;
         char c = ' ';
         int[,] juego;
 
@@ -32,16 +33,15 @@ public class Program
         Tablero t = new Tablero(juego);
         t.Render();
         // Bucle
-        while (!terminado && c != 'q')
+        while (!terminado && !exit)
         {
             c = LeeInput();
+            
+            if (c == 'q') exit = true;
 
-            if (c == 'q') break;
-
-            if (c == 'p') t.Pista();
-            else t.ProcesaInput(c);
-
+            t.ProcesaInput(c);
             t.Render();
+            if (c == 'p') t.Pista();
             terminado = t.Terminado();
         }
         Console.Clear();
@@ -63,7 +63,7 @@ public class Program
             case "A": d = 'a'; break;  // leer de archivo   
             case "N": d = 'n'; break;  // casilla negra
             case "B": d = 'b'; break;  // casilla blanca 
-            case "p": d = 'p'; break;  // pista  
+            case "P": d = 'p'; break;  // pista  
             case "Spacebar": d = 's'; break;  // limpiar casilla
             case "Escape": d = 'q'; break;  // terminar
             default: d = ' '; break;
