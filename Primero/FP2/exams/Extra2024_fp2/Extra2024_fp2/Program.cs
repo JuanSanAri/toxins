@@ -17,10 +17,38 @@ namespace LightsOut
 
             Tablero t = new Tablero(lineas); //llamada a la constructora
             // Variables y cosas
+            Random rnd = new Random();
+            int n = 0;
+            int filas = 0;
             Console.CursorVisible = false;
             bool terminado = false;
             bool win = false;
             char c;
+            string resp;
+
+            do
+            {
+                Console.Write("Quieres tablero de ejemplo o aleatorio? [e/a]: ");
+                resp = Console.ReadLine();
+            } while (resp != "a" && resp != "e");
+
+            if (resp == "a")
+            {
+                Console.Write("Cuántas filas? ");
+                filas = int.Parse(Console.ReadLine());
+                Console.Write("Cuántas columnas? ");
+                int columnas = int.Parse(Console.ReadLine());
+                n = rnd.Next(10);
+
+                t = new Tablero(filas, columnas, n);
+            }
+            // Bucle
+            t.Dibuja();
+            if (resp == "a")
+            {
+                Console.SetCursorPosition(0, filas + 2);
+                Console.WriteLine($"Se han hecho {n} jugadas al azar");
+            }
             while (!terminado && !win)
             {
                 c = LeeInput();
@@ -66,9 +94,6 @@ namespace LightsOut
                 }
             }
             return d;
-
         }
-
     }
-
 }
