@@ -1,3 +1,10 @@
+01/07/2026
+- Extra2024fp2 done, concluimos FP2 (finally)
+
+30/06/2026
+- Review exámenes de tablero para rehacer el Render (ahora el cursor se hace fuera del bucle)
+- Review exámenes de FP2 y fixeados los Lee (ahora tienen bien las excepciones y el finally)
+
 29/06/2026
 - Terminado FP1
 FP2: 2 exámenes (falta solo 1), practicas y ejercicios
@@ -11,6 +18,8 @@ Avanzando con terminar la carpeta de fp1:
 Creadas carpetas de organización
 por ahora solo subido cosas de fp1:
 - exámenes extra2025fp1, extra2023fp1, ordinaria2025fp1
+
+
 
 PENDIENTE:
 - hacer extra2024fp2, readme de exámenes fp2
