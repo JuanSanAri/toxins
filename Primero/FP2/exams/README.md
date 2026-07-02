@@ -16,7 +16,7 @@ Sin mucho que añadir, muy simplón, mecánicamente y técnicamente, no tiene ni
 ## 2. 🟡 SUDOKU *(Ordinaria 25)*
 **Métodos clave:** Esquina, Posibles
 
-Realemente le subo una tier en dificultad porque a lo mejor te tiras 20 minutos sacando la fórmula para el método `Esquina`, que queda bonito, pero te puede fastidiar si no estás fresco en el examen (aunque hay maneras más toscas de sacarlo si no sale esa), luego en `Posibles` tienes ciertas restricciones pero en general bastante mecánico, normalito en el resto de métodos, al ser un tablero tan simple los métodos generales (constructor, render, lee, etc.) salen muy rápido así que compensa mucho, pero tiene su twist. Tampoco nada del otro mundo, examen chill.
+Realmente le subo una tier en dificultad porque a lo mejor te tiras 20 minutos sacando la fórmula para el método `Esquina`, que queda bonito, pero te puede fastidiar si no estás fresco en el examen (aunque hay maneras más toscas de sacarlo si no sale esa), luego en `Posibles` tienes ciertas restricciones pero en general bastante mecánico, normalito en el resto de métodos, al ser un tablero tan simple los métodos generales (constructor, render, lee, etc.) salen muy rápido así que compensa mucho, pero tiene su twist. Tampoco nada del otro mundo, examen chill.
 
 ---
 
@@ -31,4 +31,4 @@ Este examen no va de saber hacer un método concreto, va de saber programar, de 
 - El `ClickCasillaMemo` y el `DeshacerJugada` te los pintan en el enunciado como el mismísimo diablo pero si tienes papel y boli te das cuenta al instante que es una bobadita, pero hay que estar espabilao.
 - El `ProcesaInput` gestiona más inputs de lo normal y se va extendiendo a lo largo que hacemos, también tratamos las excepciones ahí al no integrar el Restaura en el Main, así que ojito.
 
-En resumen: si vas bien preparado técnicamente lo sacas, pero si fallas en alguno de los pilares (listas, archivos, excepciones, constructoras) se te va a acumular, es importantísimo que tengas muy claro todo, también es un examen de resistencia, no de dificultad pura ya que 2/3 del tiempo del examen lo inviertes creando métodos que llaman a otros métodos, gestionando las listas, o reconstruyendo métodos queya habías "termiando", pero eso es todo, el Program no es nada, el Main es muy simplón de hecho.
+En resumen: si vas bien preparado técnicamente lo sacas, pero si fallas en alguno de los pilares (listas, archivos, excepciones, constructoras) se te va a acumular, es importantísimo que tengas muy claro todo, también es un examen de resistencia, no de dificultad pura ya que 2/3 del tiempo del examen lo inviertes creando métodos que llaman a otros métodos, gestionando las listas, o reconstruyendo métodos que ya habías "terminado", pero eso es todo, el Program no es nada, el Main es muy simplón de hecho.
