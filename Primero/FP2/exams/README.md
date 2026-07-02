@@ -1,7 +1,7 @@
 # TIERLIST DE EXÁMENES FP2
 
 ###### IMPORTANTE: YO NO HAGO RECURSIÓN!! Siempre me dejo los 1-2pts. porque siempre llego justo justo de tiempo.
-###### Dicho esto, en cuanto a los exámenes de FP2 Jaime no se suele pasar, son exámenes simples, pero evalúan parte técnica a buena escala normalmente, en FP1 es más saber sacar con biq un método complicado, que en los exámenes de FP2 lo puede haber oye, pero generalmente está más orientado a saber si de verdad conoces como funciona el cotarro entre clases.
+###### Dicho esto, en cuanto a los exámenes de FP2 Jaime no se suele pasar, son exámenes simples, pero evalúan parte técnica a buena escala normalmente, en FP1 es más saber sacar con biq métodos complicados, que en los exámenes de FP2 lo puede haber oye, pero generalmente está más orientado a saber si de verdad conoces como funciona el cotarro entre métodos, constructoras, listas, etc.
 
 
 ---
@@ -9,26 +9,26 @@
 ## 1. 🟢 KAKURASU *(Ordinaria 24)*
 **Métodos clave:** Ninguno (todo muy mecánico)
 
-El más simple de los tres con diferencia. Sumas por fila/columna, enums para los estados de casilla, constructor directo con la matriz de datos. No hay ningún método que te haga pensar demasiado. `Incorrectas` con `out` y `SumaFila`/`SumaCol` son mecánicos puros. Si llevas la base bien, es un paseo.
+Sin mucho que añadir, muy simplón, mecánicamente y técnicamente, no tiene ni comprobaciones de vecinos para ser tablero que es en donde se suelen complicar los exámenes de tablero, si vas con base es un paseo.
 
 ---
 
 ## 2. 🟡 SUDOKU *(Ordinaria 25)*
 **Métodos clave:** Esquina, Posibles
 
-Sube un escalón respecto a Kakurasu. `Esquina` con `ref` requiere pillar el truco de la división entera (`fil/3*3`), que no es obvio si no lo has visto. `Posibles` te obliga a pensar en tres restricciones a la vez (fila + columna + subcuadrícula), pero una vez pillas el patrón de "tachar en el array de booleanos", todo cae por su propio peso. `PonNumero` con excepciones (`throw`) y `DamePosibles` con listas enlazadas son directos si dominas los conceptos.
+Realemente le subo una tier en dificultad porque a lo mejor te tiras 20 minutos sacando la fórmula para el método `Esquina`, que queda bonito, pero te puede fastidiar si no estás fresco en el examen (aunque hay maneras más toscas de sacarlo si no sale esa), luego en `Posibles` tienes ciertas restricciones pero en general bastante mecánico, normalito en el resto de métodos, al ser un tablero tan simple los métodos generales (constructor, render, lee, etc.) salen muy rápido así que compensa mucho, pero tiene su twist. Tampoco nada del otro mundo, examen chill.
 
 ---
 
 ## 3. 🟠 LIGHTS OUT *(Extra 24)*
-**Métodos clave:** TODOS — este examen no va de saber hacer un método concreto, va de saber programar
+**Métodos clave:** TODOS
 
-El examen más técnicamente completo de FP2. No es que haya un método especialmente difícil, es que necesitas dominar de TODO:
+Este examen no va de saber hacer un método concreto, va de saber programar, de los que tengo y he hecho, es el más completo técnicamente, necesitas entender TODO lo que estás haciendo, si no, es probable que metas la pata.
 
-- Sobrecarga de constructoras (una con strings, otra con `Random` para tableros aleatorios).
-- Undo con lista enlazada y codificación de coordenadas (`k = 10*fil + col`, recuperar con `/10` y `%10`).
-- Guardar/restaurar partida con `StreamWriter`/`StreamReader`, validación de formato y dimensiones con `try/catch/finally`.
-- Conmutar casillas adyacentes respetando límites del tablero.
-- Integrar todo en un `ProcesaInput` que gestione 8+ inputs distintos.
+- Sobrecarga de constructoras.
+- Undo con lista enlazada y codificación de coordenadas (aunque eso al menos te lo da el enunciado).
+- `StreamWriter`(Guarda) muy simple, pero el `StreamReader`(Restaura) es rarete porque en este examen se trata más como un "checkpoint" que como lo que suele ser y por ello lo hacemos en la clase de tablero junto al Guarda.
+- Tiene también una especie de sobrecarga al clickar casillas (que por cierto este SÍ tiene comprobación de vecinos), que en realidad no porque el método original es para marcar la casilla y el otro para guardar el movimiento, pero si vas flojo te puede pillar de sorpresa.
+- El `ProcesaInput` gestiona más inputs de lo normal y se va extendiendo a lo largo que hacemos, también tratamos las excepciones ashí al no integrar el Restaura en el Main, así que ojito.
 
-En resumen: si vas bien preparado técnicamente lo sacas, pero si fallas en alguno de los pilares (listas, archivos, excepciones, constructoras) se te va a acumular. Es un examen de resistencia, no de dificultad pura.
+En resumen: si vas bien preparado técnicamente lo sacas, pero si fallas en alguno de los pilares (listas, archivos, excepciones, constructoras) se te va a acumular, es importantísimo que tengas muy claro todo, también es un examen de resistencia, no de dificultad pura ya que 2/3 del tiempo del examen lo inviertes creando métodos que llaman a otros métodos o gestionando las listas, o haciendo el Restaura (que por cierto es el más complicadete hasta ahora por su naturaleza de estar en Tablero y de ser como de checker), el Main es muy simplón de hecho.

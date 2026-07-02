@@ -80,16 +80,11 @@ namespace Sudoku
             }
         }
 
-        private void Esquina(ref int fil, ref int col)
+        // Sacar biq here
+        private static void Esquina(ref int fil, ref int col)
         {
-            // fila
-            if (fil / 3 == 0) fil = 0;
-            else if (fil / 3 == 1) fil = 3;
-            else fil = 6;
-            // col
-            if (col / 3 == 0) col = 0;
-            else if (col / 3 == 1) col = 3;
-            else col = 6;
+            fil = (fil / 3) * 3;
+            col = (col / 3) * 3;
         }
 
         private bool[] Posibles()
