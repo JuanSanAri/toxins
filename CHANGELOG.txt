@@ -1,3 +1,14 @@
+PENDIENTE:
+- ninjakun de pvli
+
+04/07/2026
+- 
+
+03/07/2026
+- Establecida la nomenclatura y organización de exams de PVLI
+- Creado el zip LOOK y el readme de pvli, explicando gestión de archivos
+- Revisados, limpios y subidos: Pooyan, Discs, BalloonFight
+
 01/07/2026
 - Extra2024fp2 y tierlist de Fp2 DONE
 - FP2 y FP1 terminados por fin
@@ -22,16 +33,12 @@ por ahora solo subido cosas de fp1:
 
 
 
-PENDIENTE:
-- exams pvli
-- proyecto dsi
-
 NOMENCLATURA (para acordarme):
-PARA FP:
-  examenes: ConvocatoriaAÑO_fp1
-  practicas: AÑOpr1_Nombre
-  ejercicios: hojaX, pdf de enunciado fuera de la solucion (no necesaria carpeta de enunciado)
-PARA PVLI:
-  examenes:
-PARA DSI:
-  proyecto final:
+- PARA FP:
+	examenes: ConvocatoriaAÑO_fp1
+	practicas: AÑOpr1_Nombre
+	ejercicios: hojaX, pdf de enunciado fuera de la solucion (no necesaria carpeta de enunciado)
+- PARA PVLI:
+	examenes: ConvocatoriaAÑO_NombreExamen
+		dentro: 1. NombreExamen_solucion -> clases
+			2. NombreExamen_enunciado -> template SIN lib ni types, pdf enunciado
