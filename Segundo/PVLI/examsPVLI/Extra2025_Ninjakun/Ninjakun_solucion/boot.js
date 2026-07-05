@@ -97,7 +97,7 @@ export default class Boot extends Phaser.Scene {
 			frameRate: 10,
 			repeat: 0,
 		});
-		// automáticamente a MainMenu
-		this.scene.start('MainMenu');
+		// automáticamente a Menu
+		this.scene.start('MenuScene');
 	}
 }

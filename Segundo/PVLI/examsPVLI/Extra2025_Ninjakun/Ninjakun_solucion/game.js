@@ -1,5 +1,7 @@
 import Boot from './boot.js'
 import MenuScene from './MenuScene.js'
+import GameScene from './GameScene.js'
+import GameOverScene from './GameOverScene.js';
 
 let config = {
 	type: Phaser.AUTO,
@@ -14,7 +16,7 @@ let config = {
 		height: 256,
 		zoom: 1
 	},
-	scene: [Boot, MenuScene],
+	scene: [Boot, MenuScene, GameScene, GameOverScene],
 	physics: { 
 		default: 'arcade', 
 		arcade: { 

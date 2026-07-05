@@ -1,6 +1,6 @@
-export default class MainMenu extends Phaser.Scene {
+export default class MenuScene extends Phaser.Scene {
 	constructor() {
-		super({ key: 'MainMenu' });
+		super({ key: 'MenuScene' });
 	}
 
 	create() {
@@ -8,7 +8,7 @@ export default class MainMenu extends Phaser.Scene {
 		let cy = this.sys.game.config.height / 2;
 		let h = this.sys.game.config.height;
 
-		// hi score arriba (lo recuperaremos de localStorage más adelante)
+		// hi score arriba
 		let hiScore = localStorage.getItem('hiScore') || 0;
 		this.add.text(cx, 20, 'HI SCORE', {
 			fontFamily: 'upheat', fontSize: '16px', color: '#ff0000'
