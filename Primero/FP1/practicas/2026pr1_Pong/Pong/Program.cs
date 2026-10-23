@@ -1,6 +1,4 @@
-﻿using System;
-using System.Diagnostics;
-using System.Reflection;
+﻿// Juan Sánchez Arias
 
 class Program
 {
@@ -23,11 +21,24 @@ class Program
         bool salir = false;
         // bool para la pausa
         bool pausa = false;
+
+        int tSleep = 90; // entero para el retardo entre frames
+        int limitSleep = 20; // límite retardo mínimo
+
+        // RENDERIZADO OPTIMIZADO
+        // Límites
+        Console.BackgroundColor = ConsoleColor.Green;
+        Console.SetCursorPosition(0, ALTO - 1); // Superior
+        for (int i = 0; i < ANCHO; i++) Console.Write(" ");
+        Console.SetCursorPosition(0, 0); // Inferior
+        for (int i = 0; i < ANCHO; i++) Console.Write(" ");
+        Console.ResetColor();
+
         while (!salir)
         {
 
             // LEER TECLADO
-            if (Console.KeyAvailable)
+            while (Console.KeyAvailable) // Para evitar el "robo" de turno
             { // ver si se ha pulsado alguna tecla
                 ConsoleKeyInfo tecla = Console.ReadKey(true); // recoger pulsación de tecla
                 // tecla puede ser:
@@ -44,10 +55,18 @@ class Program
 
                 if (pausa)
                 {
+                    Console.ResetColor();
                     Console.SetCursorPosition(0, ALTO + 2);
                     Console.WriteLine("PAUSADO, PULSA CUALQUIER TECLA PARA REANUDAR.");
                     Console.ReadKey(true);
                     pausa = false;
+                    Console.Clear();
+                    Console.BackgroundColor = ConsoleColor.Green;
+                    Console.SetCursorPosition(0, ALTO - 1); // Superior
+                    for (int i = 0; i < ANCHO; i++) Console.Write(" ");
+                    Console.SetCursorPosition(0, 0); // Inferior
+                    for (int i = 0; i < ANCHO; i++) Console.Write(" ");
+                    Console.ResetColor();
                 }
             }
 
@@ -58,6 +77,7 @@ class Program
 
 
             // COLISIONES
+            // Pelota-Pared
             if ((pelotaY == ALTO - 2 && dirY > 0) || (pelotaY == 1 && dirY < 0)) dirY *= -1;
 
             // Palas
@@ -70,25 +90,20 @@ class Program
                 puntos2++;
                 pelotaX = ANCHO / 2;
                 pelotaY = ALTO / 2;
+                if (tSleep > limitSleep)
+                    tSleep -= 5; // Disminuimos retardo entre frames
             }
             else if (pelotaX > ANCHO - 3)
             {
                 puntos1++;
                 pelotaX = ANCHO / 2;
                 pelotaY = ALTO / 2;
+                if (tSleep > limitSleep)
+                    tSleep -= 5; // Disminuimos retardo entre frames
             }
 
+
             // RENDERIZADO
-            Console.Clear(); // borrado de pantalla
-
-            // Límites
-            Console.SetCursorPosition(0, ALTO - 1);
-            Console.BackgroundColor = ConsoleColor.Green;
-            for (int i = 0; i < ANCHO; i++) Console.Write(" ");
-            Console.SetCursorPosition(0, 0);
-            for (int i = 0; i < ANCHO; i++) Console.Write(" ");
-            Console.ResetColor();
-
             // Red central
             Console.ForegroundColor = ConsoleColor.Cyan;
             for (int i = 1; i <= ALTO - 2; i++)
@@ -123,9 +138,26 @@ class Program
 
 
             // Retardo
-            System.Threading.Thread.Sleep(90);
+            System.Threading.Thread.Sleep(tSleep);
 
-            // borrado de la pelota y palas para el siguiente frame
+
+            // RENDERIZADO OPTIMIZADO (PALAS Y PELOTA)
+            // Pelota
+            Console.SetCursorPosition(pelotaX, pelotaY);
+            Console.Write(" ");
+
+            // Palas
+            for (int i = pala1Y; i < pala1Y + LONG_PALA; i++)
+            {
+                Console.SetCursorPosition(1, i);
+                Console.Write(" ");
+            }
+            for (int i = pala2Y; i < pala2Y + LONG_PALA; i++)
+            {
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.SetCursorPosition(ANCHO - 2, i);
+                Console.Write(" ");
+            }
         }
     }
 }
